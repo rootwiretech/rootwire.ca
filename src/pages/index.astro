@@ -1,81 +1,143 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Logo from '../components/Logo.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title="rootwire">
+    <main>
+        <section class="main-logo">
+            <Logo />
+        </section>
+        <section class="subhead">
+            <p class="content">
+                You have <strong>stories to tell</strong>. We have the
+                experience to make them <strong>stand out</strong>.
+            </p>
+        </section>
+        <section>
+            <h1>About us</h1>
+            <article class="content">
+                <p>
+                    We are an experienced duo of multidisciplenary consultants
+                    that specializes in bringing ideas to life via technology.
+                </p><p>We consult on:</p><ul>
+                    <li>
+                        <strong
+                            >Conveying information and stories via
+                            interdisciplenary methods</strong
+                        >, such as web apps, digital mapping, games,
+                        photography, video, writing, and more.
+                    </li>
+                    <li>
+                        <strong>Using a heritage perspective</strong> to tell the
+                        stories of your project, find new ones in the data you already
+                        have, and convey the traditions of your organization in modern
+                        ways.
+                    </li>
+                    <li>
+                        <strong
+                            >Building your digital project for the non-profit
+                            sector</strong
+                        >, including idea generation, knowledge sharing,
+                        open-sourcing, and helping you budget for us in your
+                        grants.
+                    </li>
+                    <li>
+                        <strong
+                            >Software development industry best practices</strong
+                        > to keep your project secure, maintainable, and accessible
+                        to all.
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <section>
+            <h1>Contact</h1>
+            <p class="content">
+                Send us an email at <a href="mailto:info@rootwire.ca"
+                    >info@rootwire.ca</a
+                > and we'll arrange a time to talk about your idea to get the information
+                we need to create a free quote.
+            </p>
+        </section>
+        <section>
+            <h1>Some of our projects</h1>
+            <ul role="list" class="link-card-grid">
+                <Card
+                    href="https://headstoneaddresses.com/"
+                    title="Headstone Addresses"
+                    body="An Edmonton heritage data gathering and visualization project, linking headstones to their home addresses in China."
+                />
+                <Card
+                    href="http://thegatewayonline.ca/hubrun/"
+                    title="HUB Run"
+                    body="A University of Alberta web game that was created to drive record start-of-year engagement with the campus newspaper."
+                />
+            </ul>
+        </section>
+    </main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient { 
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+    main {
+        color: white;
+        margin: auto;
+        padding: 1.5rem;
+        max-width: 60ch;
+    }
+    h1 {
+        font-size: 2rem;
+        margin: 0;
+    }
+    li {
+        margin: 10px 0px;
+    }
+    section {
+        margin-top: 80px;
+    }
+    .content {
+        line-height: 1.6;
+        margin: 1rem 0;
+        padding: 1rem;
+        border-radius: 0.4rem;
+    }
+    .content code {
+        font-size: 0.875em;
+        font-weight: bold;
+        background: rgba(var(--accent), 12%);
+        color: rgb(var(--accent));
+        border-radius: 4px;
+        padding: 0.3em 0.45em;
+    }
+    .content strong {
+        color: rgb(var(--accent));
+    }
+    .content a {
+        color: rgb(var(--accent));
+        text-decoration: none;
+    }
+    .blurb {
+        background-color: white;
+        color: black;
+    }
+    .link-card-grid {
+        display: grid;
+        grid-template-columns: 1;
+        gap: 1rem;
+        padding: 0;
+    }
+
+    .main-logo {
+        margin-top: 25%;
+        margin-bottom: 25%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    .subhead {
+        margin-top: 50%;
+        margin-bottom: 25%;
+    }
 </style>
